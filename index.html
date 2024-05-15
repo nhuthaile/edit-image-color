@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="container">
+        <div class="editor">
+          <h2>PHOTO EDITOR</h2>
+          <input type="text" placeholder="Enter image URL" id="urlImg" />
+          <button id="urlSubmit_btn">SUBMIT</button>
+          <p id="linkEx">Ex: https://source.unsplash.com/400x500?pizza</p>
+          <div class="bar1">
+            <label for="brightness_bar">Brightness</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="100"
+              id="brightness_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar2">
+            <label for="contrast_bar">Contrast</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="100"
+              id="contrast_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar3">
+            <label for="hue_bar">Hue</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="0"
+              id="hue_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar4">
+            <label for="blur_bar">Blur</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="0"
+              id="blur_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar5">
+            <label for="saturation_bar">Saturation</label>
+            <input
+              type="range"
+              min="0"
+              max="300"
+              value="100"
+              id="saturation_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar6">
+            <label for="sepia_bar">Sepia</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="0"
+              id="sepia_bar"
+              class="bar"
+            />
+          </div>
+        </div>
+        <div class="img_box">
+          <img src="https://source.unsplash.com/400x500" alt="" id="img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!-- MAIN JS -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
