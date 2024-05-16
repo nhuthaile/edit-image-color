@@ -16,6 +16,9 @@ let sepia = document.getElementById("sepia_bar");
 let invert = document.getElementById("invert_bar");
 
 let imageStyle = document.getElementById("img");
+let downloadImg = document.getElementById("btn_img");
+
+// Function update image filter
 
 function updateImgeFilter() {
   let brightnessValue = brightness.value * 1;
@@ -40,12 +43,13 @@ function updateImgeFilter() {
   document.getElementById(
     "brightness_label"
   ).innerHTML = `Brightness (${brightnessValue})`;
-
-  // updateImgeFilter();
 }
+
+// Take change value as input for update image filter funtion
 
 // BRIGHTNESS
 brightness.addEventListener("change", updateImgeFilter);
+
 // CONTRAST
 contrast.addEventListener("change", updateImgeFilter);
 
@@ -63,3 +67,40 @@ sepia.addEventListener("change", updateImgeFilter);
 
 // Invert
 invert.addEventListener("change", updateImgeFilter);
+
+// Download Image
+
+document.getElementById("btn_download_img").onclick = function () {
+  // Create canvas
+  let canvas = document.createElement("canvas");
+  let ctx = canvas.getContext("2d");
+
+  // Set width and height for cavas
+  canvas.width = imageStyle.naturalWidth;
+  canvas.height = imageStyle.naturalHeight;
+
+  // Apply filter for canvas
+  let filters = `brightness(${brightness.value}%) contrast(${contrast.value}%) hue-rotate(${hue.value}deg) blur(${blurr.value}px) saturate(${saturation.value}%) sepia(${sepia.value}%) invert(${invert.value}%)`;
+
+  ctx.filter = filters;
+
+  // Load image
+  let tempImage = new Image();
+  tempImage.crossOrigin = "anonymous";
+  tempImage.src = imageStyle.src;
+  tempImage.onload = function () {
+    // Daw image onto canvas
+    ctx.drawImage(tempImage, 0, 0, canvas.width, canvas.height);
+
+    // Create link to download
+
+    let downloadLink = document.createElement("a");
+    downloadLink.href = canvas.toDataURL("image/png", 1);
+    downloadLink.download = "edited-image.png";
+
+    downloadLink.click();
+  };
+  tempImage.onerror = function () {
+    alert("Failed to load the image due to CORS issues.");
+  };
+};
