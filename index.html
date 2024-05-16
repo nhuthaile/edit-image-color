@@ -23,24 +23,31 @@
   <body>
     <div class="background">
       <div class="container">
+        <div class="img_box_origin">
+          <img
+            src="https://source.unsplash.com/400x500"
+            alt=""
+            id="img_origin"
+          />
+        </div>
         <div class="editor">
           <h2>PHOTO EDITOR</h2>
           <input type="text" placeholder="Enter image URL" id="urlImg" />
           <button id="urlSubmit_btn">SUBMIT</button>
           <p id="linkEx">Ex: https://source.unsplash.com/400x500?pizza</p>
           <div class="bar1">
-            <label for="brightness_bar">Brightness</label>
+            <label for="brightness_bar" id="brightness_label">Brightness</label>
             <input
               type="range"
               min="0"
-              max="200"
               value="100"
+              max="200"
               id="brightness_bar"
               class="bar"
             />
           </div>
           <div class="bar2">
-            <label for="contrast_bar">Contrast</label>
+            <label for="contrast_bar" id="contrast_label">Contrast</label>
             <input
               type="range"
               min="0"
@@ -51,7 +58,7 @@
             />
           </div>
           <div class="bar3">
-            <label for="hue_bar">Hue</label>
+            <label for="hue_bar" id="hue_label">Hue</label>
             <input
               type="range"
               min="0"
@@ -62,7 +69,7 @@
             />
           </div>
           <div class="bar4">
-            <label for="blur_bar">Blur</label>
+            <label for="blur_bar" id="blur_label">Blur</label>
             <input
               type="range"
               min="0"
@@ -73,7 +80,7 @@
             />
           </div>
           <div class="bar5">
-            <label for="saturation_bar">Saturation</label>
+            <label for="saturation_bar" id="saturation_label">Saturation</label>
             <input
               type="range"
               min="0"
@@ -84,13 +91,24 @@
             />
           </div>
           <div class="bar6">
-            <label for="sepia_bar">Sepia</label>
+            <label for="sepia_bar" id="sepia_label">Sepia</label>
             <input
               type="range"
               min="0"
               max="200"
               value="0"
               id="sepia_bar"
+              class="bar"
+            />
+          </div>
+          <div class="bar7">
+            <label for="invert_bar" id="invert_label">Invert</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="0"
+              id="invert_bar"
               class="bar"
             />
           </div>

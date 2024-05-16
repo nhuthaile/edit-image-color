@@ -23,7 +23,7 @@
   border-radius: 25px;
   padding: 20px 30px;
   color: #7f7f7f;
-  line-height: 35px;
+  line-height: 30px;
   width: 350px;
   height: 600px;
 }
@@ -60,11 +60,16 @@
 #img {
   width: 400px;
   background-color: white;
-  border-top-right-radius: 20px;
+  border-radius: 0 20px 20px 0;
 }
 
 input[type="range" i] {
   /* background-color: rgb(99, 82, 255); */
   /* appearance: none; */
   cursor: grab;
+}
+#img_origin {
+  width: 400px;
+  background-color: white;
+  border-radius: 20px 0 0 20px;
 }
