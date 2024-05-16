@@ -6,6 +6,10 @@ document.getElementById("urlSubmit_btn").onclick = function () {
   document.getElementById("img_origin").src = newImgUrl;
 };
 
+// Upload Url And load image to original box
+
+//
+
 // Update image with bar value changes
 let brightness = document.getElementById("brightness_bar");
 let contrast = document.getElementById("contrast_bar");
@@ -17,6 +21,7 @@ let invert = document.getElementById("invert_bar");
 
 let imageStyle = document.getElementById("img");
 let downloadImg = document.getElementById("btn_img");
+let uploadImage = document.getElementById("upload_img");
 
 // Function update image filter
 
@@ -104,3 +109,23 @@ document.getElementById("btn_download_img").onclick = function () {
     alert("Failed to load the image due to CORS issues.");
   };
 };
+
+// hanle upload image
+
+function handleUploadImage(event) {
+  let file = event.target.files[0];
+  if (file) {
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      // Update iamge to both image box
+      imageStyle.src = e.target.result;
+      document.getElementById("img_origin").src = e.target.result;
+
+      imageStyle.style.display = "inline-block";
+      updateImgeFilter();
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+uploadImage.addEventListener("change", handleUploadImage);

@@ -33,8 +33,11 @@
         <div class="editor">
           <h2>PHOTO EDITOR</h2>
           <input type="text" placeholder="Enter image URL" id="urlImg" />
-          <button id="urlSubmit_btn">SUBMIT</button>
-          <p id="linkEx">Ex: https://source.unsplash.com/400x500?pizza</p>
+          <button id="urlSubmit_btn">SUBMIT LINK</button>
+          <p id="uploadFile">UPLOAD FILE</p>
+          <input type="file" id="upload_img" accept="image/*" />
+
+          <!-- <p id="linkEx">Ex: https://source.unsplash.com/400x500?pizza</p> -->
           <div class="bar1">
             <label for="brightness_bar" id="brightness_label">Brightness</label>
             <input
@@ -111,6 +114,7 @@
               id="invert_bar"
               class="bar"
             />
+
             <button id="btn_download_img" class="btn">Download</button>
           </div>
         </div>

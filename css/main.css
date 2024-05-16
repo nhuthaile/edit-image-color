@@ -36,6 +36,18 @@
   width: 100%;
   margin-bottom: 10px;
 }
+#urlImg::placeholder {
+  text-align: center;
+}
+#uploadFile {
+  margin: unset;
+}
+#upload_img {
+  /* margin: 10px 0; */
+  cursor: copy;
+  border: 1px dotted #f14869;
+  width: 100%;
+}
 
 #urlSubmit_btn {
   display: block;
