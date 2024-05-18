@@ -1,6 +1,7 @@
 // SUBMIT URL AND CHANGE IMAGE
 document.getElementById("urlSubmit_btn").onclick = function () {
   let newImgUrl = document.getElementById("urlImg").value;
+  // =========================================================
 
   document.getElementById("img").src = newImgUrl;
   document.getElementById("img_origin").src = newImgUrl;
@@ -75,7 +76,9 @@ invert.addEventListener("change", updateImgeFilter);
 
 // Download Image
 
-document.getElementById("btn_download_img").onclick = function () {
+document.getElementById("btn_download_img").onclick = function (e) {
+  // prevent refresh html
+  // e.preventDefault();
   // Create canvas
   let canvas = document.createElement("canvas");
   let ctx = canvas.getContext("2d");
@@ -112,20 +115,29 @@ document.getElementById("btn_download_img").onclick = function () {
 
 // hanle upload image
 
-function handleUploadImage(event) {
-  let file = event.target.files[0];
-  if (file) {
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      // Update iamge to both image box
-      imageStyle.src = e.target.result;
-      document.getElementById("img_origin").src = e.target.result;
+// function handleUploadImage(event) {
+//   let file = event.target.files[0];
+//   if (file) {
+//     let reader = new FileReader();
+//     reader.onload = function (e) {
+//       // Update iamge to both image box
+//       imageStyle.src = e.target.result;
+//       document.getElementById("img_origin").src = e.target.result;
 
-      imageStyle.style.display = "inline-block";
-      updateImgeFilter();
-    };
-    reader.readAsDataURL(file);
-  }
-}
+//       imageStyle.style.display = "inline-block";
+//       updateImgeFilter();
+//     };
+//     reader.readAsDataURL(file);
+//   }
+// }
 
 uploadImage.addEventListener("change", handleUploadImage);
+
+function handleUploadImage(event) {
+  let fileList = document.getElementById("upload_img").files;
+  let file = fileList[0];
+
+  // Update iamge to both image box
+  imageStyle.src = URL.createObjectURL(file);
+  document.getElementById("img_origin").src = URL.createObjectURL(file);
+}
